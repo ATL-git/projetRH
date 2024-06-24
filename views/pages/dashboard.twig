@@ -1,0 +1,65 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+	<link rel="stylesheet" href="/assets/css/dashboard.css">
+{% endblock %}
+
+{% block main %}
+	<div class="search-container">
+		<h2>Rechercher un employé</h2>
+		<form action="/dashboard" method="get">
+			<label for="nameRadio">Nom employé</label>
+			<input type="radio" id="nameRadio" name="searchValue" value="name" checked>
+			<label for="fonctionRadio">Fonction employé</label>
+			<input type="radio" id="fonctionRadio" name="searchValue" value="fonction">
+			<input type="text" id="search" name="search" placeholder="Entrez un nom d'employé ou une fonction">
+			<button type="submit">Rechercher</button>
+			<a href="/dashboard">Annuler</a>
+		</form>
+	</div>
+	<div class="dashboard-header">
+		<h2>Mes employés</h2>
+		<a href="/addemployee">Ajouter un employé</a>
+	</div>
+	<section>
+		{% if employees %}
+			<div class="employee-list">
+				{% for employee in employees %}
+					<div class="employeeContainer">
+						<h3>{{ employee.name }}</h3>
+						{% if employee.photo %}
+							<img src="./assets/img/uploads/{{ employee.photo }}" alt="employee photo">
+						{% else %}
+							<p>Pas de photo existante pour cet employé</p>
+						{% endif %}
+						<h4>Fonction :</h4>
+						<p>{{ employee.fonction }}</p>
+						<h4>Blâme reçu :</h4>
+						{% if employee.blame %}
+
+							<div class="employeeBlame">
+								<p>Nombre de blame :
+									{{ employee.blame }}</p>
+								<a href="/employeeBlame/{{ employee.id }}">Mettre un blâme</a>
+							</div>
+
+						{% else %}
+
+							<div class="employeeBlame">
+								<p>Aucun blâme</p>
+								<a href="/employeeBlame/{{ employee.id }}">Mettre un blâme</a>
+							</div>
+
+						{% endif %}
+						<div class="employee-actions">
+							<a href="/employeeupdate/{{ employee.id }}">Modifier l'employé</a>
+							<a href="/employeedelete/{{ employee.id }}">Supprimer l'employé</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% else %}
+			<p class="no-employees">Aucun employé existant, veuillez en créer un.</p>
+		{% endif %}
+	</section>
+{% endblock %}

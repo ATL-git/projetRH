@@ -1,0 +1,191 @@
+/* Reset CSS pour uniformiser les styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #ece9e9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Conteneur principal pour le contenu */
+.container {
+    width: 80%; /* Ajuste la largeur selon tes besoins */
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    padding: 20px;
+}
+
+/* Styles pour les titres */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #faf6f6;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Styles pour les paragraphes */
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Styles pour les liens */
+a {
+    color: #f5f6f7; /* Couleur du lien */
+    text-decoration: none; /* Supprime la soulignement par défaut */
+}
+
+a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Style pour les boutons */
+button, .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4631e4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+button:hover, .button:hover {
+    background-color: #f6f7f8d3;
+}
+
+/* Style pour les formulaires */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="file"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Style pour les sections */
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style pour les articles */
+article {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* Style pour les images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Style pour le header */
+header {
+    background-color: #4631e4;
+    color: #fff;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center; /* Centre horizontalement le texte */
+    flex-grow: 1; /* Pour pousser le h1 au maximum à gauche */
+}
+
+header a {
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+
+/* Style pour le footer */
+footer {
+    background-color: #4631e4;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+/* Style pour la navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Style pour les messages d'erreur */
+.error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Media queries pour la réactivité */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}

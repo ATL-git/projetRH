@@ -1,0 +1,46 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/addemployee.css">
+{% endblock %}
+
+{% block main %}
+    <section class="addemployee-container">
+        <div>
+            {% if employee %}
+                <h2>Modifier un employé</h2>
+            {% else %}
+                <h2>Ajouter un employé</h2>
+            {% endif %}
+        </div>
+        <form method="post" enctype="multipart/form-data" {% if employee %} action="/employeeupdate/{{ employee.id }}" {% else %} action="/addemployee" {% endif %}>
+            <div>
+                <label for="name">Nom de l'employé</label>
+                <input id="name" type="text" name="name" value="{{ employee.name ?? '' }}">
+                {% if error %}
+                    <p class="error">{{ error.errors.name.message }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="fonction">Fonction</label>
+                <input id="fonction" type="text" name="fonction" value="{{ employee.fonction ?? '' }}">
+                {% if error %}
+                    <p class="error">{{ error.errors.fonction.message }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="img">Image</label>
+                {% if employee and employee.photo %}
+                    <img src="/assets/img/uploads/{{ employee.photo }}" alt="Photo de l'employé" style="max-width: 150px;">
+                {% endif %}
+                <input type="file" name="img" id="img">
+                {% if error %}
+                    <p class="error">{{ error.errors.photo.message }}</p>
+                {% endif %}
+            </div>
+            <div class="center-button"> 
+                <button type="submit" class="submit-button">Envoyer</button> 
+            </div>
+        </form>
+    </section>
+{% endblock %}

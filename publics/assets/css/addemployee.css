@@ -1,0 +1,92 @@
+/* Style pour la section d'ajout/modification d'un employé */
+body{
+    color: black;
+}
+
+.addemployee-container {
+    max-width: 400px; /* Réduire la largeur maximale */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #7b6262;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.addemployee-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.addemployee-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addemployee-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.addemployee-container input[type="text"],
+.addemployee-container input[type="email"],
+.addemployee-container input[type="password"],
+.addemployee-container input[type="file"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #7b6262;
+    border-radius: 4px;
+}
+
+.addemployee-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.addemployee-container button:hover {
+    background-color: #0056b3;
+}
+
+.addemployee-container p {
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+.addemployee-container .error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.addemployee-container a {
+    color: #0056b3;
+}
+/* Ajouter du CSS pour centrer le bouton */
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajuster la marge selon vos besoins */
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
