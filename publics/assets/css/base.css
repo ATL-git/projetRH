@@ -58,7 +58,7 @@ a {
     text-decoration: none; /* Supprime la soulignement par défaut */
 }
 
-a:hover {
+a:hover:not(".acceuilLink") {
     text-decoration: underline; /* Soulignement au survol */
 }
 
@@ -189,3 +189,5 @@ nav ul li {
         width: 90%;
     }
 }
+
+

@@ -78,6 +78,8 @@ societyRouter.get('/logout', (req, res) => {
 })
 
 
-
+societyRouter.get('/acceuil', (req , res) => {
+    res.redirect('/dashboard')
+})
 
 module.exports = societyRouter
